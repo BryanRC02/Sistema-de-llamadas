@@ -1,0 +1,40 @@
+1. Configurar entorno virtual
+
+# Crear el entorno virtual
+python -m venv venv
+
+# Activarlo 
+.\venv\Scripts\activate
+
+2. Instalar dependencias para el backend
+pip install flask flask-sqlalchemy flask-cors gunicorn pymysql requests
+
+3. Configurar React para el frontend
+
+# Crear la app para el frontend
+npx create-react-app frontend
+
+# Instalar las dependencias para el frontend
+npm install axios bootstrap react-router-dom
+
+4. Configurar MariaDB
+
+# Conectar al sevidor de MariaDB
+mysql -u root -p
+
+# Crear la base de datos
+CREATE DATABASE sistema_llamadas;
+
+# Listar las bases de datos para verificar su creación
+SHOW DATABASES;
+
+# Utilizar la base de datos
+USE sistema_llamadas;
+
+# Crear un usuario específico para esa base de datos
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'ppp2025';
+
+# Darle todos los permisos en la base de datos
+GRANT ALL PRIVILEGES ON sistema_llamadas.* TO 'admin'@'localhost';
+
+FLUSH PRIVILEGES;
